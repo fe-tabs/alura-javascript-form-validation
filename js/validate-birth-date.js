@@ -1,7 +1,11 @@
+import { errorMessages } from "./errors.js";
+
 export default function isOfAge(field) {
   const birthDate = new Date(field.value);
-  checkAge(birthDate);
-  console.log(checkAge(birthDate));
+  if (!checkAge(birthDate)) {
+    field.setCustomValidity(false);
+    errorMessages.aniversario.customError = "O usuário não é maior de idade";
+  }
 }
 
 function checkAge(date) {

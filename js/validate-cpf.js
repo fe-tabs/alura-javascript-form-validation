@@ -1,9 +1,11 @@
+import { errorMessages } from "./errors.js";
+
 export default function isValidCPF(field) {
   const cpf = field.value.replace(/\.|-/g, "");
 
   if (checkEqualNumbers(cpf) || checkFirstDigit(cpf) || checkSecondDigit(cpf)) {
-    console.log("CPF inválido!");    
-  } else {
+    field.setCustomValidity(false);
+    errorMessages.cpf.customError = "CPF inválido";
   }
 }
 
