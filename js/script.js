@@ -9,11 +9,11 @@ form.addEventListener("submit", event => {
   event.preventDefault();
 
   const data = {
-    "name": event.target.element["nome"].value,
-    "email": event.target.element["email"].value,
-    "rg": event.target.element["rg"].value,
-    "cpf": event.target.element["cpf"].value,
-    "birthDate": event.target.element["aniversario"].value
+    "name": event.target.elements["nome"].value,
+    "email": event.target.elements["email"].value,
+    "rg": event.target.elements["rg"].value,
+    "cpf": event.target.elements["cpf"].value,
+    "birthDate": event.target.elements["aniversario"].value
   };
 
   localStorage.setItem("register", JSON.stringify(data));
